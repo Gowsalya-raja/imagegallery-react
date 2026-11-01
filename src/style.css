@@ -1,0 +1,157 @@
+** {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+
+/* Gallery Header */
+
+.gallery-header {
+    text-align: center;
+    padding-top: 45px;
+    padding-bottom: 35px;
+}
+
+.gallery-header h1 {
+    font-family: Georgia, serif;
+    font-size: 90px;
+    font-weight: normal;
+    letter-spacing: 2px;
+    margin-bottom: 45px;
+}
+
+
+/* Explore Button */
+
+.explore-btn {
+    background-color: #111;
+    color: white;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 25px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+
+/* Gallery Container */
+
+.gallery-container {
+    max-width: 1400px;
+    width: 94%;
+    margin: auto;
+    columns: 4;
+    column-gap: 18px;
+}
+
+
+/* Image Card */
+
+.image-card {
+    width: 100%;
+    margin-bottom: 18px;
+    break-inside: avoid;
+    position: relative;
+    overflow: hidden;
+    border-radius: 7px;
+    background-color: #111;
+}
+
+
+/* Image - No Cropping */
+
+.image-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    transition: transform 0.4s ease;
+}
+
+
+/* Hover Effect */
+
+.image-card:hover img {
+    transform: scale(1.03);
+}
+
+
+/* Image Details */
+
+.image-details {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px 12px 15px;
+    background: linear-gradient(
+        transparent,
+        rgba(0, 0, 0, 0.9)
+    );
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.image-card:hover .image-details {
+    opacity: 1;
+}
+
+.image-details h3 {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.image-details p {
+    font-size: 11px;
+    color: #ccc;
+}
+
+
+/* Tablet */
+
+@media (max-width: 900px) {
+    .gallery-container {
+        columns: 3;
+        column-gap: 15px;
+    }
+
+    .gallery-header h1 {
+        font-size: 70px;
+    }
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .gallery-header h1 {
+        font-size: 60px;
+    }
+
+    .gallery-container {
+        columns: 2;
+        column-gap: 12px;
+    }
+
+    .image-card {
+        margin-bottom: 12px;
+    }
+}
+
+
+/* Small Mobile */
+
+@media (max-width: 380px) {
+    .gallery-container {
+        columns: 2;
+        column-gap: 8px;
+    }
+}
